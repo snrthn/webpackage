@@ -1,0 +1,17 @@
+
+div {
+	padding: 8px;
+	border: 2px solid #000000;
+}
+
+.header {
+	background: #aa0000;
+}
+
+.content {
+	background: #00aa00;
+}
+
+.footer {
+	background: #0000aa;
+}
