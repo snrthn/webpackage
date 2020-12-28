@@ -1,5 +1,7 @@
 
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = function (env) {
 	return {
@@ -15,18 +17,18 @@ module.exports = function (env) {
 			rules: [
 				{
 					test: /\.css$/i,
-					use: [
-						{
-							loader: 'file-loader',
-							options: {
-								outputPath: 'css',
-								name: '[name].[ext]'
-							}
-						}
-					]
+					use: ['style-loader', 'css-loader']
 				}
 			]
 		},
-		devtool: 'cheap-source-map'
+		devtool: 'cheap-source-map',
+		plugins: [
+			new HtmlWebpackPlugin({
+				template: path.resolve(__dirname, 'index.html'),
+				favicon: path.resolve(__dirname, 'static/favicon.ico'),
+				filename: 'index.html'
+			}),
+			new CleanWebpackPlugin()
+		]
 	}
 }

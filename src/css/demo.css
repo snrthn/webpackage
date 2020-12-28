@@ -5,13 +5,13 @@ div {
 }
 
 .header {
-	background: #aa0000;
+	background: #ff4444;
 }
 
 .content {
-	background: #00aa00;
+	background: #44ff44;
 }
 
 .footer {
-	background: #0000aa;
+	background: #4444ff;
 }
